@@ -53,9 +53,9 @@ const Pedidos = ({ producto }) => {
 
   const grabarPedido = () => {
     try {
-
+      
       handlePedido({ cantidad, ...producto });
-   
+      // esto se volviò a modificar para ver cambios
       if (opc) {
         // si el producto existe, entonces no le deberia
         // sumar el precio => setPrecio(producto.precio*cantidad)
