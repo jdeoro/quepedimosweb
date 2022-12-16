@@ -189,7 +189,7 @@ export function AuthProvider({ children }) {
       );
       setPedido(pedidoActualizado);
 
-      console.log("existe ->", pedidoActualizado);
+      console.log("Sì existe ->", pedidoActualizado);
     } else {
       console.log("no existe");
       setPedido([...pedido, producto]);
