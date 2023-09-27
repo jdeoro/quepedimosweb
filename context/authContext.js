@@ -57,6 +57,7 @@ export function AuthProvider({ children }) {
   const [loading,setLoading]= useState(true)
   const [role, setRole]=useState({})
   const [dataUser,setDatauser] = useState({})
+  const [ contador, setContador]  = useState(0);
 
   const [comanda, setComanda] = useState([]);
   
@@ -180,6 +181,12 @@ export function AuthProvider({ children }) {
     });
   };
 
+  const retTotal = () =>{
+    const total = pedido.map( ( reg ) => 
+      reg.precio * reg.cantidad
+   )
+    setContador(total);
+  }
 
   const handlePedido = ({ ...producto }) => {
     if (pedido.some((elpedido) => elpedido.id === producto.id)) {
@@ -348,7 +355,7 @@ export function AuthProvider({ children }) {
         opcRegister,setopcRegister,
         registerWithEmailAndPassword,
         mensajeToast,grabaPedido,grabaUsuario,
-        role,setRole,esAdministrador,dataUser
+        role,setRole,esAdministrador,dataUser,retTotal,contador
         }}
     >
       {children}

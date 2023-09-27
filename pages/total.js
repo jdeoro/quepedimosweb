@@ -1,7 +1,7 @@
 //
 //  GRABA ( SUBE EL OBJETO (PEDIDO) A FIREBASE)
 //
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import ResumenCompra from "../components/ResumenCompra";
 import { useAuth } from "../context/authContext";
@@ -9,6 +9,9 @@ import { formatearDinero } from "../helpers";
 
 const Total = () => {
   const { pedido, precio, setPrecio, registros,grabaPedido} = useAuth();
+
+
+
 
  return (
     <Layout>
@@ -23,12 +26,12 @@ const Total = () => {
       >
         CONFIRMAR EL PEDIDO
       </button>
-      <p className="font-thin text-3xl">
+      {/* <p className="font-thin text-3xl">
         TOTAL:{" "}
         <span className="text-3xl font-thin mt-2 text-amber-500">
           {formatearDinero(precio)}
         </span>
-      </p>
+      </p> */}
       {/* pedido.lenght === 0 */}
       {registros === 0 ? (
         <p className="text-center">No hay elementos en tu pedido</p>
@@ -37,6 +40,7 @@ const Total = () => {
           <ResumenCompra key={registro.id} producto={registro} />
         ))
       )}
+
     </Layout>
   );
 };

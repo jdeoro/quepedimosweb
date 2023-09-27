@@ -64,26 +64,17 @@ const Pedidos = ({ producto }) => {
         //  si lo encuentra, le suma ó le resta la cantidad 
 
         // saco el producto original que ya existia
+
         const total = pedido.filter(registro => (registro.id === producto.id ) 
          );
-
-        console.log("total ",total);
-
-        if (total.length==0){
           setPrecio(precio + producto.precio * cantidad);
-          console.log("no existe total");
-        }else{
-          console.log("existe total");
-          setPrecio(precio + producto.precio * cantidad);
-        }
 
-
-        
-        console.log("productopre:",producto.precio);
-        console.log("precio:",precio);
+        console.log("id producto:",producto.id);
+        console.log("producto.precio:",producto.precio);
         console.log(cantidad);
+        console.log("precio:",precio);
 
-        console.log("graba:",precio + producto.precio * cantidad)
+
         // 12.12.22 se cambió
         //        setPrecio(precio + producto.precio * cantidad);
       } else {
